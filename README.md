@@ -68,3 +68,45 @@ import pickle
 model_data = {"model": best_logreg, "feature_names": X.columns.tolist()}
 with open("customer_churn_model.pkl", "wb") as f:
     pickle.dump(model_data, f)
+
+🔮 Real-Time Prediction System
+We built a predictive system where users can input customer details and get a churn prediction with probability.
+
+def predict_churn(customer_data):
+    input_data = np.array([customer_data[feature] for feature in feature_names]).reshape(1, -1)
+    input_data_scaled = scaler.transform(input_data)
+    prediction = loaded_model.predict(input_data_scaled)
+    pred_prob = loaded_model.predict_proba(input_data_scaled)[0][1]
+    
+    print(f"Prediction: {'Churn' if prediction[0] == 1 else 'No Churn'}")
+    print(f"Prediction Probability: {pred_prob:.4f}")
+🔹 Output Example:
+Prediction: Churn  
+Prediction Probability: 0.7254
+🏆 Business Recommendations
+✅ Offer discounts & incentives to high-churn-risk customers.
+✅ Encourage long-term contracts (One-year and Two-year plans).
+✅ Improve customer support for Fiber Optic users.
+✅ Target electronic check users with better payment plans.
+
+🔮 Future Scope
+🚀 Enhancements for better accuracy:
+✔ Use Deep Learning (Neural Networks) for improved churn prediction.
+✔ Automate model retraining with new data.
+✔ Deploy as a Web App (Flask/Streamlit) for business use.
+✔ Integrate with CRM systems (Salesforce, HubSpot) for real-time churn alerts.
+
+📌 How to Run This Project
+1️⃣ Install Required Libraries
+pip install pandas numpy scikit-learn plotly seaborn imbalanced-learn flask
+2️⃣ Run the Jupyter Notebook
+jupyter notebook
+3️⃣ Load the Model & Predict Churn
+with open("customer_churn_model.pkl", "rb") as f:
+    loaded_model = pickle.load(f)
+📬 Connect with Me
+👨‍💻 Ayush
+🔗 LinkedIn
+📧 pandavayush004@gmail.com
+
+⭐ If you found this useful, please give it a star! ⭐
