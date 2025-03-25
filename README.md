@@ -1,91 +1,70 @@
-# Machine-Learning
-Machine learning with Supervised Learning
-🛍️ E-Commerce Customer Behaviour Analysis ML Project
-👨🏻‍💻 Project Overview
-This project observed e-commerce customer behaviour in online shopping throughout my machine learning knowledge and techniques. Using a dataset of e-commerce customer behaviour, it obseved important aspects that influence online shopping and developing online shopping prediction models to enhance our business.
+# 📊 Customer Churn Prediction Using Machine Learning 🚀  
 
-📌 Objectives
-Analyze customer behaviour, purchase habit and satisfaction level.
-Identify how customers attracted, and how enhance business opportunity.
-Observation of different value comparison so that we focuses on our actual customers.
-Focus on our targeted audience, and improve our sales.
-It Helps businesses archive their goals and optimize their valuable assets.
-📈 Dataset
-The dataset contains information about E-Commerce Customer Behaviour Dataset including:
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)  
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Supervised-yellow)  
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)  
+![GitHub](https://img.shields.io/badge/GitHub-Public-orange)  
 
-Customer ID - Integer
-Gender - String
-Age - Integer
-City - String
-Membership Type - String
-Total Spend - Numeric
-Items Purchased - Integer
-Average Rating - Numeric
-Discount Applied - Boolean
-Days Since Last Purchase - Integer
-Satisfaction Level - String
-Source: Kaggle - E-commerce Customer Behavior Dataset
+## 🌟 Project Overview  
+Customer churn is a **critical issue** for businesses, leading to **lost revenue and higher customer acquisition costs**. This project aims to **predict customer churn** using **machine learning models** based on customer data from a telecom company.  
 
-📊 Exploratory Data Analysis (EDA) Insights
-Key insights extracted from the dataset:
+🔹 **Objective:** Predict whether a customer will churn based on subscription details.  
+🔹 **Dataset:** [Telco Customer Churn Dataset](https://www.kaggle.com/datasets/blastchar/telco-customer-churn) *(7,043 customers, 21 features)*  
+🔹 **Tech Stack:** `Python`, `Scikit-Learn`, `Pandas`, `Seaborn`, `Plotly`, `Flask` *(Optional for Deployment)*  
+🔹 **Models Used:** Logistic Regression, Decision Tree, Random Forest, SVM, KNN  
+🔹 **Deployment:** Model saved as a `.pkl` file for real-time predictions.  
 
-Demographics:
-The average customer age is 33.60 years with a broad age distribution.
-Spending Behavior:
-Customers spend an average of $845.38 per transaction.
-Average number of items purchased per order: 12.6 items.
-Engagement Levels:
-Satisfaction Level Distribution:
-Satisfied: 36.30%
-Neutral: 30.66%
-Unsatisfied: 33.24%
-Average days between purchases: 26.59 days.
-Correlations:
-Strong relationships between customer engagement, total spend, and purchase frequency.
-Customers with higher satisfaction tend to spend $595.14.
-📋 Project Pipeline
-1️⃣ Data Preprocessing: delete recode of missing values, encode category features, and normalize numerical data.
-2️⃣ Feature Engineering: Identify key features influencing customer satisfaction and spending.
-3️⃣ Model Selection & Training: Training this models like Random Forest, XGBoost, and Logistic Regression.
-4️⃣ Evaluation: Use accuracy, precision, recall, RMSE, and F1-score for performance observation.
-5️⃣ Deployment & Business Insights: Generate recommendations for customer attension and marketing strategies and tequniques.
+---
 
-⚖️ Machine Learning Models Evaluated
-Model	Accuraciy (%)	F1 Score (%)	Training Time (s)
-Random Forest	100.0%	100.0%	0.197
-SVM	100.0%	100.0%	0.008
-Gradient Boosting	100.0%	100.0%	0.324
-KNN	98.6%	98.6%	0.003
-Naive Bayes	100.0%	100.0%	0.004
-Logistic Regression	98.6%	98.6%	0.372
-🗝️ Key Insights
-The our average customer age is 33.60 years.
-Customers spending on an average of $845.38 per transaction.
-Average number of items purchased in per order is: 12.6 items.
-Satisfaction Level Distribution:
-✅ Satisfied: 36.10%
-⚠️ Neutral: 30.66%
-❌ Un-satisfied: 33.24%
-The average days between purchases is 26.59 days.
-Higher satisfied consumers spending $1273.50 on an average, while unsatisfied consumers spend only $595.14 on an average.
-🗣 Business Recommendations
-1️⃣ Boost Retention – Offere 5-10% discounts or loyality to Neutral/Very Unsatisfied consumers to increase their repeat product purchases.
-2️⃣ Personalized Marketing – Identifying top consumers and provide VIP services & targeted promotions to enhance our revenue.
-3️⃣ Optimize Discounts – give personalized discounting for more product purchase, especially for unsestified consumers.
-4️⃣ Enhance Engagement – apply email marketing campign for that customers which is inactive for 30+ days to connect them.
+## 🔍 Exploratory Data Analysis (EDA)  
+EDA helped us uncover key insights before training models:  
 
-🤖 Technologies Used
-Python 3.13
-Pandas & NumPy
-Plotly & Matplotlib
-Scikit-learn
-Jupyter Notebook
-🚀 Getting Started
-Clone this repository
-git clone https://github.com/yatikanghan/Machine-Learning.git
-Install dependencies
-pip install -r requirements.txt
-Open the Jupyter notebook
-jupyter notebook jupyter/project.ipynb
-📝 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+📌 **Key Findings:**  
+✅ Customers with **month-to-month contracts churn the most**.  
+✅ **Higher Monthly Charges lead to more churn**.  
+✅ **Electronic check users have the highest churn rate**.  
+
+📊 **Churn Rate by Contract Type:**  
+![Churn Contract Chart](assets/churn_contract_chart.png)  
+
+📊 **Monthly Charges vs. Churn:**  
+![Churn Monthly Charges](assets/churn_monthly_charges.png)  
+
+*(Upload images inside an `assets/` folder and update the image paths above.)*  
+
+---
+
+## ⚙️ Data Preprocessing  
+- **Handled Missing Values:** Filled missing values in `TotalCharges`.  
+- **Encoded Categorical Variables:** Converted text data to numeric format.  
+- **Feature Scaling:** Used `StandardScaler` for models like SVM & KNN.  
+- **Handled Imbalanced Data:** Applied `SMOTE` to balance churn vs. non-churn cases.  
+
+---
+
+## 🚀 Model Training & Evaluation  
+We trained **five models** and compared their accuracy, precision, recall, and F1-score:  
+
+| Model                  | Accuracy | Precision | Recall | F1-Score |
+|------------------------|----------|------------|--------|----------|
+| **Logistic Regression** | **0.7987** | 0.6771 | **0.5791** | **0.6243** |
+| **Decision Tree**       | 0.7307 | 0.4933 | 0.4906 | 0.4919 |
+| **Random Forest**       | 0.7902 | 0.6579 | 0.4692 | 0.5477 |
+| **SVM**                | 0.7941 | **0.6850** | 0.5013 | 0.5789 |
+| **KNN**                | 0.7519 | 0.5465 | 0.5040 | 0.5244 |
+
+✅ **Best Model:** **Logistic Regression** (Highest accuracy & best F1-score)  
+✅ **Improved Performance with Hyperparameter Tuning**  
+
+---
+
+## 🛠️ Saving & Deploying the Model  
+The best model was **saved as a `.pkl` file** for real-time predictions.  
+
+```python
+import pickle
+
+# Save the trained model
+model_data = {"model": best_logreg, "feature_names": X.columns.tolist()}
+with open("customer_churn_model.pkl", "wb") as f:
+    pickle.dump(model_data, f)
